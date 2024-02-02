@@ -9,7 +9,7 @@ npm ci
 
 ### Run the csv generator script
 ```bash
-npm run generate
+npm run gen
 ```
 
 ### Run the parser script
