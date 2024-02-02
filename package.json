@@ -1,0 +1,19 @@
+{
+  "name": "worker-thread-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen": "node --experimental-top-level-await src/generate.mjs",
+    "parse": "node --experimental-top-level-await src/workerThreads.mjs"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-generate": "^4.3.1",
+    "csv-parse": "^5.5.3"
+  }
+}
