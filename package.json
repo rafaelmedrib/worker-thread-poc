@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gen": "node --experimental-top-level-await src/generate.mjs",
+    "gen": "node --experimental-top-level-await src/generateCsv.mjs",
     "parse": "node --experimental-top-level-await src/workerThreads.mjs"
   },
   "type": "module",
