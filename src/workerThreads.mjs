@@ -9,30 +9,22 @@ const getCsvFilesInDir = async (folderPath) => {
 }
 
 const csvFiles = await getCsvFilesInDir(CSVS_FOLDER);
-const workerPool = [];
 
 csvFiles.forEach((file) => {
-  const worker = new Worker('./src/worker.mjs', {
+  new Worker('./src/worker.mjs', {
     workerData: {
       file,
-    },
-  });
-
-  workerPool.push(worker);
-});
-
-workerPool.forEach((worker) => {
-  worker.on('message', (message) => {
+    }
+  })
+  .on('message', (message) => {
     console.log(message);
-  });
-  worker.on('error', (error) => {
+  })
+  .on('error', (error) => {
     console.error(error);
-  });
-  worker.on('exit', (code) => {
+  })
+  .on('exit', (code) => {
     if (code !== 0) {
       console.error(new Error(`Worker stopped with exit code ${code}`));
-    } else {
-      console.log('Worker stopped');
     }
   });
 });
