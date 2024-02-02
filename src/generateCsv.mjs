@@ -15,6 +15,6 @@ const generateCsvs = (numberOfFiles, options) => {
 
 generateCsvs(3, {
   columns: 2,
-  length: 3,
+  length: 10,
   delimiter: ',',
 });
